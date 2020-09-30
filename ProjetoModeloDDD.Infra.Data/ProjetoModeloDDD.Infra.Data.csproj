@@ -53,12 +53,22 @@
   <ItemGroup>
     <Compile Include="Contexto\ProjetoModeloContext.cs" />
     <Compile Include="EntityConfig\ClienteConfiguration.cs" />
+    <Compile Include="EntityConfig\ProdutoConfiguration.cs" />
+    <Compile Include="Migrations\202009291825264_CreateProdutoTable.cs" />
+    <Compile Include="Migrations\202009291825264_CreateProdutoTable.designer.cs">
+      <DependentUpon>202009291825264_CreateProdutoTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009301455327_PopulateMassaTeste.cs" />
+    <Compile Include="Migrations\202009301455327_PopulateMassaTeste.designer.cs">
+      <DependentUpon>202009301455327_PopulateMassaTeste.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ClienteRepository.cs" />
+    <Compile Include="Repositories\ProdutoRepository.cs" />
+    <Compile Include="Repositories\RepositoryBase.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\ProjetoModeloDDD.Domain\ProjetoModeloDDD.Domain.csproj">
       <Project>{7c389ceb-b47d-49a0-8e44-ebe22e0f3c75}</Project>
@@ -68,6 +78,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202009291825264_CreateProdutoTable.resx">
+      <DependentUpon>202009291825264_CreateProdutoTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009301455327_PopulateMassaTeste.resx">
+      <DependentUpon>202009301455327_PopulateMassaTeste.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
